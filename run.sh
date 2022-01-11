@@ -8,7 +8,7 @@ name=$(basename "$path" ".c")
 if [ -e "$path" ]; then
 
   name=$(basename "$path" ".c")
-  gcc $path -o ${name%%.*}
+  gcc -Wall -Wextra $path -o ${name%%.*}
   mv ${name%%.*} execs/ && execs/${name%%.*}
 
 elif [ "$NEWFLAG" == "$2" ]

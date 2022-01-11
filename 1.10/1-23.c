@@ -3,7 +3,6 @@
 
 // Write a program to remove all comments from a C program. Don't forget to
 // handle quoted strings and character constants properly. C comments don't nest.
-// TODO: handle new line fomatting of comments.
 
 #define INITIAL_STATE 0
 #define LOOKUP_STATE 1
@@ -124,10 +123,28 @@ void remove_comments(char line[], char FSM_MACRO)
 
     }
     else if (state == SCOMMENT_STATE)
+    {
       state = FSM[state][c];
+      if (line[i + 1] == '\0')
+        if (line[i] == '\n' || line[i] == '\r')
+          {
+            line[j] = line[i];
+            ++j;
+          }
+
+    }
+
 
     else if (state == MCOMMENT_STATE || state == CLOSE_MCOMMENT_STATE)
+    {
       state = FSM[state][c];
+      if (line[i + 1] == '\0')
+        if (line[i] == '\n' || line[i] == '\r')
+          {
+            line[j] = line[i];
+            ++j;
+          }
+    }
 
     else if (state == QUOTE_STATE)
     {
