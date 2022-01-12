@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/*
+Exercise 2-1. Write a program to determine the ranges of char, short, int, and long
+variables, both signed and unsigned, by printing appropriate values from standard headers
+and by direct computation. Harder if you compute them: determine the ranges of the various
+floating-point types.
+*/
+
 unsigned long power(int x,  unsigned short n)
 {
   unsigned long value = 1;
@@ -55,6 +62,12 @@ void int_range()
   unsigned long value = power(2,n_bits), halve = value / 2;
   printf("range of unsigned long (0, %ld)\n", value);
   printf("range of signed long (-%ld, %ld)\n", halve,halve-1);
+  printf("decimal: %.3f\n", 1234e-1);
+
+  char x[4] = "yuno";
+  for (int i = 0; i < 4; ++i)
+    printf("%c -> %d\n", x[i], x[i]);
+  printf("tab in octa: %d\n", '\131');
 }
 
 int main()

@@ -17,7 +17,7 @@ then
   touch "$path"
   cp ./template/template.c "$path"
   name=$(basename "$path" ".c")
-  gcc -std=c99 -pedantic -W -Wall $path -o ${name%%.*}
+  gcc -std=c11 -pedantic -W -Wall $path -o ${name%%.*}
   mv ${name%%.*} execs/ && execs/${name%%.*}
 
 else
