@@ -31,7 +31,7 @@ int htoi(const char s[])
 
 int main()
 {
-  char s[] = "0x978f";
-  printf("Value of `%s` : %d, %d\n", s, htoi(s), 0x978f);
+  char s[] = "0xabe978f";
+  printf("Value of `%s` : %d, %d\n", s, htoi(s), 0xabe978f);
   return 0;
 }
